@@ -15,6 +15,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     int rsvpPoints = 0;
+    int speedPoints = 0;
     int mosesPoints = 0;
     int seriesPoints = 0;
     int oppositePoints = 0;
@@ -34,21 +35,27 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickTrue(View view){
 
+
+
         boolean checked = ((RadioButton) view).isChecked();
 
-        switch (view.getId()){
 
+
+        switch (view.getId()){
+            
             case R.id.radio_true_speed:
 
-                if (checked){
+                if (speedPoints==1){
 
                     Toast.makeText(this, "You Can Only Make This Choice Once.....Reset to Retry", Toast.LENGTH_SHORT).show();
                     return;
 
-                }else
+                }
+
+                if(checked)
 
                     {
-                    score = score + 1;
+                    speedPoints = speedPoints + 1;
 
                     }
 
@@ -57,45 +64,75 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.radio_true_rsvp:
 
-                if (checked){
+                if (rsvpPoints==1){
 
                     Toast.makeText(this, "You Can Only Make This Choice Once.....Reset to Retry", Toast.LENGTH_SHORT).show();
                     return;
 
-                }else
+                }
+                    if(checked)
 
                     {
-                    score = score + 1;
+                    rsvpPoints = rsvpPoints + 1;
 
                     }
                 break;
 
             case R.id.radio_true_moses:
 
-                if (checked){
-                    score = score + 1;
+                if (mosesPoints==1){
+
+                    Toast.makeText(this, "You Can Only Make This Choice Once.....Reset to Retry", Toast.LENGTH_SHORT).show();
+                    return;
+
+                }
+
+                if (checked)
+                {
+                    mosesPoints = mosesPoints + 1;
                 }
                 break;
 
             case R.id.radio_true_series:
 
+                if (seriesPoints==1){
+
+                    Toast.makeText(this, "You can only Answer One Time....Please Reset To try Again", Toast.LENGTH_SHORT).show();
+
+                    return;
+                }
+
                 if (checked){
-                    score = score + 1;
+                    seriesPoints = seriesPoints + 1;
                 }
                 break;
 
 
             case R.id.radio_true_opposite:
 
+                if (oppositePoints==1){
+
+                    Toast.makeText(this, "You can only Answer One Time....Please Reset To try Again", Toast.LENGTH_SHORT).show();
+
+                    return;
+                }
+
                 if (checked){
-                    score= score + 1;
+                    oppositePoints= oppositePoints + 1;
                 }
                 break;
 
             case R.id.radio_true_age:
 
+                if (agePoints==1){
+
+                    Toast.makeText(this, "You can only Answer One Time....Please Reset To try Again", Toast.LENGTH_SHORT).show();
+
+                    return;
+                }
+
                 if (checked){
-                    score = score + 1;
+                    agePoints = agePoints + 1;
                 }
                 break;
 
@@ -109,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (checked){
-                    score = score + 1;
+                    groupPoints = groupPoints + 1;
                 }
                 break;
 
@@ -123,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (checked){
-                    score= score + 1;
+                    forkPoints= forkPoints + 1;
                 }
                 break;
 
@@ -138,37 +175,19 @@ public class MainActivity extends AppCompatActivity {
 
         boolean checked = ((RadioButton) view).isChecked();
 
-
-
-
-
-
-
         switch (view.getId()){
 
             case R.id.radio_false_speed:
 
-
-
-                if (checked){
-
-                    Toast.makeText(this, "You can only Answer One Time....Please Reset to Try Again", Toast.LENGTH_SHORT).show();
-
-                    return;
-                }else
+                if (checked)
                     {
-                    score = score + 0 ;
+                    speedPoints = speedPoints + 0 ;
+
+
                     }
                 break;
 
             case R.id.radio_false_rsvp:
-
-                if (checked==checked){
-
-                    Toast.makeText(this, "You can only Answer One Time....Please Reset to Try Again", Toast.LENGTH_SHORT).show();
-
-                    return;
-                }
 
                 if (checked){
                     rsvpPoints = rsvpPoints + 0 ;
@@ -177,26 +196,12 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.radio_false_moses:
 
-                if (mosesPoints==0){
-
-                    Toast.makeText(this, "You can only Answer One Time....Please Reset to Try Again", Toast.LENGTH_SHORT).show();
-
-                    return;
-                }
-
                 if (checked){
                     mosesPoints = mosesPoints + 0;
                 }
                 break;
 
             case R.id.radio_false_series:
-
-                if (seriesPoints==0){
-
-                    Toast.makeText(this, "You can only Answer One Time....Please Reset to Try Again", Toast.LENGTH_SHORT).show();
-
-                    return;
-                }
 
                 if (checked){
                     seriesPoints = seriesPoints + 0;
@@ -206,26 +211,12 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.radio_false_opposite:
 
-                if (oppositePoints==0){
-
-                    Toast.makeText(this, "You can only Answer One Time....Please Reset to Try Again", Toast.LENGTH_SHORT).show();
-
-                    return;
-                }
-
                 if (checked){
                     oppositePoints = oppositePoints + 0;
                 }
                 break;
 
             case R.id.radio_false_age:
-
-                if (agePoints==0){
-
-                    Toast.makeText(this, "You can only Answer One Time....Please Reset to Try Again", Toast.LENGTH_SHORT).show();
-
-                    return;
-                }
 
                 if (checked){
                     agePoints =agePoints + 0;
@@ -234,13 +225,6 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.radio_false_group:
 
-                if (groupPoints==0){
-
-                    Toast.makeText(this, "You can only Answer One Time....Please Reset to Try Again", Toast.LENGTH_SHORT).show();
-
-                    return;
-                }
-
                 if (checked){
                     groupPoints = groupPoints + 0;
                 }
@@ -248,15 +232,8 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.radio_false_fork:
 
-                if (forkPoints==0){
-
-                    Toast.makeText(this, "You can only Answer One Time....Please Reset to Try Again", Toast.LENGTH_SHORT).show();
-
-                    return;
-                }
-
                 if (checked){
-                    score= forkPoints + 0;
+                    forkPoints = forkPoints + 0;
 
                 }
                 break;
@@ -312,6 +289,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void testSummary(View view){
 
+        score = rsvpPoints + speedPoints + mosesPoints + agePoints + forkPoints + seriesPoints + oppositePoints + groupPoints;
+
         EditText enterName = (EditText) findViewById(R.id.enterName);
         enterName.getText().toString();
         String name = enterName.getText().toString();
@@ -325,7 +304,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public String createTestSummary( String name, int score ){
+
+
+
+    public String createTestSummary( String name, int score )
+    {
+
         String summaryScore = "Name: "+ name + "\nTotal Score: " + score;
         return summaryScore;
     }
