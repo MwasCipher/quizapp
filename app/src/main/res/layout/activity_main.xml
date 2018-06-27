@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9AA33">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingBottom="60dp"
+        tools:context=".MainActivity">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#35424a"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Intelligence Quotient Test!"
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/enterName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="60dp"
+            android:hint="Your Name"
+            android:textColorHint="#ffffff"
+            android:textSize="15sp"
+            android:backgroundTint="#35424a"/>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="60dp"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="55dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/rg1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:text="What is The Speed of Light?"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="10sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_true_speed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="1.08×10^9 km/h"
+                        android:textColor="@android:color/black"
+                        android:buttonTint="@android:color/black"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_false_speed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="clickFalse"
+                        android:text="1.08×10^9 km/s"
+                        android:buttonTint="@android:color/black"/>
+                </RadioGroup>
+
+                <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/rg2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:text="The acronym RSVP originally came from the French term Répondez s’il vous plaît – True or False? "
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="10sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_true_rsvp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:onClick="clickTrue"
+                        android:text="True"
+                        android:textColor="@android:color/black"
+                        android:buttonTint="@android:color/black"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_false_rsvp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="clickFalse"
+                        android:text="False"
+                        android:buttonTint="@android:color/black"/>
+                </RadioGroup>
+
+                <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/rg3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:text="How many animals of each species did Moses take with him in the ark?"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="10sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_false_moses"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:onClick="clickTrue"
+                        android:text="All Available"
+                        android:textColor="@android:color/black"
+                        android:buttonTint="@android:color/black"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_true_moses"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="clickFalse"
+                        android:text="2"
+                        android:buttonTint="@android:color/black"/>
+                </RadioGroup>
+
+                <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/rg4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:text="Which number should come next in the pattern? : 3, 9, 6, 12, 9, "
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="10sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_true_series"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:onClick="clickTrue"
+                        android:text="15"
+                        android:textColor="@android:color/black"
+                        android:buttonTint="@android:color/black"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_false_series"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="clickFalse"
+                        android:text="6"
+                        android:buttonTint="@android:color/black"/>
+                </RadioGroup>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="50dp"
+                    android:layout_marginTop="100dp"
+                    android:gravity="center"
+                    android:onClick="testSummary"
+                    android:text="Summary" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="55dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/rg5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:text="The word PARTICULAR is the opposite of:"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="10sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_true_opposite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:onClick="clickTrue"
+                        android:text="Vague"
+                        android:textColor="@android:color/black"
+                        android:buttonTint="@android:color/black"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_false_opposite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="clickFalse"
+                        android:text="Distinct"
+                        android:buttonTint="@android:color/black"/>
+                </RadioGroup>
+
+                <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/rg6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:text="John's age is 20 years old. His age is four times as old as his sister. How old will John be when his age is twice his sister's age?"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="10sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_true_age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:onClick="clickTrue"
+                        android:text="30"
+                        android:textColor="@android:color/black"
+                        android:buttonTint="@android:color/black"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_false_age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="clickFalse"
+                        android:text="25"
+                        android:buttonTint="@android:color/black"/>
+                </RadioGroup>
+
+                <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/rg7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:text="Rearrange this letters and select the group in which the resultant word belongs: S I P R A"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="10sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_true_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:onClick="clickTrue"
+                        android:text="City"
+                        android:textColor="@android:color/black"
+                        android:buttonTint="@android:color/black"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_false_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="clickFalse"
+                        android:text="Continent"
+                        android:buttonTint="@android:color/black"/>
+                </RadioGroup>
+
+                <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/rg8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:text="Book is to Reading as Fork is to:"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="10sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_true_fork"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:onClick="clickTrue"
+                        android:text="Eating"
+                        android:textColor="@android:color/black"
+                        android:buttonTint="@android:color/black"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_false_fork"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="clickFalse"
+                        android:text="Collecting"
+                        android:buttonTint="@android:color/black"/>
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/scoreSummaryTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:padding="15dp"
+                    android:layout_margin="50dp"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/summarybutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="100dp"
+            android:onClick="reset"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:text="RESET"
+            android:gravity="center" />
+
+
+
+    </RelativeLayout>
+
+
+</ScrollView>
+
