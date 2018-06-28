@@ -5,7 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WelcomeActivity"
-    android:background="#F9AA33">
+    android:background="#35424a">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/siq"
+        android:layout_above="@+id/chkallow"
+        android:layout_margin="25dp"
+        android:background="#c0c0c0"/>
+
+
 
     <CheckBox
         android:id="@+id/chkallow"
@@ -14,6 +24,7 @@
         android:text="Check Here to Proceed"
         android:textAllCaps="true"
         android:textSize="15sp"
+        android:textColor="#F9AA33"
         android:fontFamily="sans-serif"
         android:layout_centerInParent="true"
         android:onClick="selected" />

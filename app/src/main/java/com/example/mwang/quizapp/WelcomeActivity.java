@@ -18,6 +18,9 @@ public class WelcomeActivity extends AppCompatActivity {
 
 
         Button enterQuiz = (Button) findViewById(R.id.enterQuiz);
+
+        enterQuiz.setEnabled(false);
+
         enterQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

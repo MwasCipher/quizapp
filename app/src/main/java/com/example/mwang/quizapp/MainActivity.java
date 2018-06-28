@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -240,6 +241,68 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void testSummary(View view){
+
+        score = rsvpPoints + speedPoints + mosesPoints + agePoints + forkPoints + seriesPoints + oppositePoints + groupPoints;
+
+        EditText enterName = (EditText) findViewById(R.id.enterName);
+        enterName.getText().toString();
+        String name = enterName.getText().toString();
+
+        String summaryScore = createTestSummary(name, score);
+
+        TextView score = (TextView) findViewById(R.id.scoreSummaryTextView);
+        score.setText(summaryScore);
+
+        RadioButton radioButton = (RadioButton) findViewById(R.id.radio_true_speed);
+        radioButton.setEnabled(false);
+
+        RadioButton radioButton1 = (RadioButton) findViewById(R.id.radio_true_series);
+        radioButton1.setEnabled(false);
+
+        RadioButton radioButton2 = (RadioButton) findViewById(R.id.radio_false_speed);
+        radioButton2.setEnabled(false);
+
+        RadioButton radioButton3 = (RadioButton) findViewById(R.id.radio_false_series);
+        radioButton3.setEnabled(false);
+
+        RadioButton radioButton4 = (RadioButton) findViewById(R.id.radio_true_moses);
+        radioButton4.setEnabled(false);
+
+        RadioButton radioButton5 = (RadioButton) findViewById(R.id.radio_false_moses);
+        radioButton5.setEnabled(false);
+
+        RadioButton radioButton6 = (RadioButton) findViewById(R.id.radio_true_age);
+        radioButton6.setEnabled(false);
+
+        RadioButton radioButton7 = (RadioButton) findViewById(R.id.radio_false_age);
+        radioButton7.setEnabled(false);
+
+        RadioButton radioButton8 = (RadioButton) findViewById(R.id.radio_true_rsvp);
+        radioButton8.setEnabled(false);
+
+        RadioButton radioButton9 = (RadioButton) findViewById(R.id.radio_false_rsvp);
+        radioButton9.setEnabled(false);
+
+        RadioButton radioButton10 = (RadioButton) findViewById(R.id.radio_true_opposite);
+        radioButton10.setEnabled(false);
+
+        RadioButton radioButton11 = (RadioButton) findViewById(R.id.radio_false_opposite);
+        radioButton11.setEnabled(false);
+
+        RadioButton radioButton12 = (RadioButton) findViewById(R.id.radio_true_group);
+        radioButton12.setEnabled(false);
+
+        RadioButton radioButton13 = (RadioButton) findViewById(R.id.radio_false_group);
+        radioButton13.setEnabled(false);
+
+        RadioButton radioButton14 = (RadioButton) findViewById(R.id.radio_true_fork);
+        radioButton14.setEnabled(false);
+
+        RadioButton radioButton15 = (RadioButton) findViewById(R.id.radio_false_fork);
+        radioButton15.setEnabled(false);
+
+    }
 
     public void reset(View view){
 
@@ -247,6 +310,7 @@ public class MainActivity extends AppCompatActivity {
         rsvpPoints = 0;
         mosesPoints = 0;
         seriesPoints = 0;
+        speedPoints = 0;
         oppositePoints = 0;
         agePoints = 0;
         groupPoints = 0;
@@ -257,7 +321,56 @@ public class MainActivity extends AppCompatActivity {
         summaryView.setText(" ");
 
         EditText name = (EditText)findViewById(R.id.enterName);
-        name.setText(" ");
+        name.setText(null);
+
+        RadioButton radioButton = (RadioButton) findViewById(R.id.radio_true_speed);
+        radioButton.setEnabled(true);
+
+        RadioButton radioButton1 = (RadioButton) findViewById(R.id.radio_true_series);
+        radioButton1.setEnabled(true);
+
+        RadioButton radioButton2 = (RadioButton) findViewById(R.id.radio_false_speed);
+        radioButton2.setEnabled(true);
+
+        RadioButton radioButton3 = (RadioButton) findViewById(R.id.radio_false_series);
+        radioButton3.setEnabled(true);
+
+        RadioButton radioButton4 = (RadioButton) findViewById(R.id.radio_true_moses);
+        radioButton4.setEnabled(true);
+
+        RadioButton radioButton5 = (RadioButton) findViewById(R.id.radio_false_moses);
+        radioButton5.setEnabled(true);
+
+        RadioButton radioButton6 = (RadioButton) findViewById(R.id.radio_true_age);
+        radioButton6.setEnabled(true);
+
+        RadioButton radioButton7 = (RadioButton) findViewById(R.id.radio_false_age);
+        radioButton7.setEnabled(true);
+
+        RadioButton radioButton8 = (RadioButton) findViewById(R.id.radio_true_rsvp);
+        radioButton8.setEnabled(true);
+
+        RadioButton radioButton9 = (RadioButton) findViewById(R.id.radio_false_rsvp);
+        radioButton9.setEnabled(true);
+
+        RadioButton radioButton10 = (RadioButton) findViewById(R.id.radio_true_opposite);
+        radioButton10.setEnabled(true);
+
+        RadioButton radioButton11 = (RadioButton) findViewById(R.id.radio_false_opposite);
+        radioButton11.setEnabled(true);
+
+        RadioButton radioButton12 = (RadioButton) findViewById(R.id.radio_true_group);
+        radioButton12.setEnabled(true);
+
+        RadioButton radioButton13 = (RadioButton) findViewById(R.id.radio_false_group);
+        radioButton13.setEnabled(true);
+
+        RadioButton radioButton14 = (RadioButton) findViewById(R.id.radio_true_fork);
+        radioButton14.setEnabled(true);
+
+        RadioButton radioButton15 = (RadioButton) findViewById(R.id.radio_false_fork);
+        radioButton15.setEnabled(true);
+
 
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.rg1);
         radioGroup.clearCheck();
@@ -285,28 +398,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
-    public void testSummary(View view){
-
-        score = rsvpPoints + speedPoints + mosesPoints + agePoints + forkPoints + seriesPoints + oppositePoints + groupPoints;
-
-        EditText enterName = (EditText) findViewById(R.id.enterName);
-        enterName.getText().toString();
-        String name = enterName.getText().toString();
-
-        String summaryScore = createTestSummary(name, score);
-
-        TextView score = (TextView) findViewById(R.id.scoreSummaryTextView);
-        score.setText(summaryScore);
-
-
-
-    }
-
-
-
-
     public String createTestSummary( String name, int score )
     {
 
@@ -314,7 +405,5 @@ public class MainActivity extends AppCompatActivity {
         return summaryScore;
     }
 
-
-
-
 }
+

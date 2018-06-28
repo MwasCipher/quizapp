@@ -29,7 +29,9 @@
             android:text="Intelligence Quotient Test!"
             android:textAllCaps="true"
             android:textColor="#ffffff"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"/>
 
         <EditText
             android:id="@+id/enterName"
@@ -37,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="60dp"
             android:hint="Your Name"
-            android:textColorHint="#ffffff"
+            android:textColorHint="#35424a"
             android:textSize="15sp"
             android:backgroundTint="#35424a"/>
 
@@ -93,6 +95,13 @@
                         android:onClick="clickFalse"
                         android:text="1.08×10^9 km/s"
                         android:buttonTint="@android:color/black"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#35424a"
+                        android:layout_margin="15dp"
+                        android:layout_gravity="center"/>
                 </RadioGroup>
 
                 <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -129,6 +138,14 @@
                         android:onClick="clickFalse"
                         android:text="False"
                         android:buttonTint="@android:color/black"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#35424a"
+                        android:layout_margin="15dp"
+                        android:layout_gravity="center"/>
+
                 </RadioGroup>
 
                 <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -165,6 +182,13 @@
                         android:onClick="clickTrue"
                         android:text="2"
                         android:buttonTint="@android:color/black"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#35424a"
+                        android:layout_margin="15dp"
+                        android:layout_gravity="center"/>
                 </RadioGroup>
 
                 <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -201,6 +225,13 @@
                         android:onClick="clickFalse"
                         android:text="6"
                         android:buttonTint="@android:color/black"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#35424a"
+                        android:layout_margin="15dp"
+                        android:layout_gravity="center"/>
                 </RadioGroup>
 
                 <Button
@@ -210,7 +241,8 @@
                     android:layout_marginTop="100dp"
                     android:gravity="center"
                     android:onClick="testSummary"
-                    android:text="Summary" />
+                    android:text="Summary"
+                    android:background="@drawable/rounded_button"/>
 
 
             </LinearLayout>
@@ -259,6 +291,14 @@
                         android:onClick="clickFalse"
                         android:text="Distinct"
                         android:buttonTint="@android:color/black"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#35424a"
+                        android:layout_margin="15dp"
+                        android:layout_gravity="center"/>
+
                 </RadioGroup>
 
                 <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -295,6 +335,14 @@
                         android:onClick="clickFalse"
                         android:text="25"
                         android:buttonTint="@android:color/black"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#35424a"
+                        android:layout_margin="15dp"
+                        android:layout_gravity="center"/>
+
                 </RadioGroup>
 
                 <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -331,6 +379,14 @@
                         android:onClick="clickFalse"
                         android:text="Continent"
                         android:buttonTint="@android:color/black"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#35424a"
+                        android:layout_margin="15dp"
+                        android:layout_gravity="center"/>
+
                 </RadioGroup>
 
                 <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -344,6 +400,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:layout_marginBottom="15dp"
                         android:text="Book is to Reading as Fork is to:"
                         android:textAllCaps="true"
@@ -367,6 +424,14 @@
                         android:onClick="clickFalse"
                         android:text="Collecting"
                         android:buttonTint="@android:color/black"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#35424a"
+                        android:layout_margin="15dp"
+                        android:layout_gravity="center"/>
+
                 </RadioGroup>
 
                 <TextView
@@ -398,7 +463,8 @@
             android:paddingLeft="25dp"
             android:paddingRight="25dp"
             android:text="RESET"
-            android:gravity="center" />
+            android:gravity="center"
+            android:background="@drawable/rounded_button"/>
 
 
 
