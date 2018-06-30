@@ -314,24 +314,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void testSummary(View view){
 
-        score = rsvpPoints + speedPoints + mosesPoints + agePoints + forkPoints + seriesPoints + oppositePoints + groupPoints + nilePoint + nigerPoints + orangePoints + sepikPoints + jupiterPoints;
 
         EditText enterName = (EditText) findViewById(R.id.enterName);
         enterName.getText().toString();
         String name = enterName.getText().toString();
 
-        EditText jupiterAnswer = (EditText) findViewById(R.id.answerEarth);
         String userAnswer;
-        userAnswer = jupiterAnswer.getText().toString();
+        EditText jupiterAnswer = (EditText) findViewById(R.id.answerEarth);
+        userAnswer = jupiterAnswer.getText().toString().toLowerCase();
 
-        if (userAnswer.equals("Jupiter") || userAnswer.equals("jupiter")){
+        if (userAnswer.equals("jupiter")){
 
-            jupiterPoints += 1;
+            jupiterPoints = jupiterPoints + 1;
         }
 
         else {
             jupiterPoints = jupiterPoints + 0;
         }
+
+        score = rsvpPoints + speedPoints + mosesPoints + agePoints + forkPoints + seriesPoints + oppositePoints + groupPoints + nilePoint + nigerPoints + orangePoints + sepikPoints + jupiterPoints;
+
 
 
         String summaryScore = createTestSummary(name, score);
