@@ -10,6 +10,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,8 +24,12 @@ public class MainActivity extends AppCompatActivity {
     int agePoints = 0;
     int groupPoints = 0;
     int forkPoints = 0;
+    int nigerPoints = 0;
+    int nilePoint = 0;
+    int orangePoints = 0;
+    int sepikPoints = 0;
+    int jupiterPoints = 0;
     int score = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,13 +39,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+
     public void clickTrue(View view){
 
-
-
         boolean checked = ((RadioButton) view).isChecked();
-
-
 
         switch (view.getId()){
             
@@ -166,9 +169,61 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
 
+
         }
 
 
+    }
+
+    public void boxClickTrue (View view){
+
+        boolean boxChecked = ((CheckBox) view).isChecked();
+
+        switch (view.getId()){
+
+            case R.id.chkNiger:
+
+                if (nigerPoints==1){
+
+                    Toast.makeText(this, "You can only Answer One Time....Please Reset To try Again", Toast.LENGTH_SHORT).show();
+
+                    return;
+                }
+
+
+
+                if (boxChecked){
+                    nigerPoints = nigerPoints + 1;
+                }
+                break;
+
+            case R.id.chkNile:
+
+                if (nilePoint == 1){
+
+                    Toast.makeText(this, "You can only Answer One Time....Please Reset To try Again", Toast.LENGTH_SHORT).show();
+
+                    return;
+                }
+                if (boxChecked){
+                    nilePoint = nilePoint + 1;
+                }
+                break;
+
+            case R.id.chkOrange:
+
+                if (orangePoints==1){
+
+                    Toast.makeText(this, "You can only Answer One Time....Please Reset To try Again", Toast.LENGTH_SHORT).show();
+
+                    return;
+                }
+
+                if (boxChecked){
+                    orangePoints = orangePoints + 1;
+                }
+                break;
+        }
     }
 
 
@@ -220,7 +275,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.radio_false_age:
 
                 if (checked){
-                    agePoints =agePoints + 0;
+                    agePoints = agePoints + 0;
                 }
                 break;
 
@@ -241,13 +296,43 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void boxClickFalse(View view){
+
+        boolean boxChecked = ((CheckBox)view).isChecked();
+
+        switch (view.getId()){
+
+            case R.id.chkSepik:
+                if (boxChecked)
+                {
+
+                    sepikPoints = sepikPoints + 0;
+                }
+                break;
+        }
+    }
+
     public void testSummary(View view){
 
-        score = rsvpPoints + speedPoints + mosesPoints + agePoints + forkPoints + seriesPoints + oppositePoints + groupPoints;
+        score = rsvpPoints + speedPoints + mosesPoints + agePoints + forkPoints + seriesPoints + oppositePoints + groupPoints + nilePoint + nigerPoints + orangePoints + sepikPoints + jupiterPoints;
 
         EditText enterName = (EditText) findViewById(R.id.enterName);
         enterName.getText().toString();
         String name = enterName.getText().toString();
+
+        EditText jupiterAnswer = (EditText) findViewById(R.id.answerEarth);
+        String userAnswer;
+        userAnswer = jupiterAnswer.getText().toString();
+
+        if (userAnswer.equals("Jupiter") || userAnswer.equals("jupiter")){
+
+            jupiterPoints += 1;
+        }
+
+        else {
+            jupiterPoints = jupiterPoints + 0;
+        }
+
 
         String summaryScore = createTestSummary(name, score);
 
@@ -302,6 +387,7 @@ public class MainActivity extends AppCompatActivity {
         RadioButton radioButton15 = (RadioButton) findViewById(R.id.radio_false_fork);
         radioButton15.setEnabled(false);
 
+
     }
 
     public void reset(View view){
@@ -315,6 +401,7 @@ public class MainActivity extends AppCompatActivity {
         agePoints = 0;
         groupPoints = 0;
         forkPoints = 0;
+        jupiterPoints = 0;
 
 
         TextView summaryView = (TextView) findViewById(R.id.scoreSummaryTextView);
@@ -322,6 +409,8 @@ public class MainActivity extends AppCompatActivity {
 
         EditText name = (EditText)findViewById(R.id.enterName);
         name.setText(null);
+        EditText answer = (EditText)findViewById(R.id.answerEarth);
+        answer.setText(null);
 
         RadioButton radioButton = (RadioButton) findViewById(R.id.radio_true_speed);
         radioButton.setEnabled(true);
@@ -371,6 +460,18 @@ public class MainActivity extends AppCompatActivity {
         RadioButton radioButton15 = (RadioButton) findViewById(R.id.radio_false_fork);
         radioButton15.setEnabled(true);
 
+        CheckBox chk1 = (CheckBox) findViewById(R.id.chkNiger);
+        chk1.setChecked(false);
+
+        CheckBox chk2 = (CheckBox) findViewById(R.id.chkNile);
+        chk2.setChecked(false);
+
+        CheckBox chk3 = (CheckBox) findViewById(R.id.chkOrange);
+        chk3.setChecked(false);
+
+        CheckBox chk4 = (CheckBox) findViewById(R.id.chkSepik);
+        chk4.setChecked(false);
+
 
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.rg1);
         radioGroup.clearCheck();
@@ -396,12 +497,14 @@ public class MainActivity extends AppCompatActivity {
         RadioGroup radioGroup7 = (RadioGroup) findViewById(R.id.rg8);
         radioGroup7.clearCheck();
 
+        finish();
+
     }
 
     public String createTestSummary( String name, int score )
     {
 
-        String summaryScore = "Name: "+ name + "\nTotal Score: " + score;
+        String summaryScore = "Name: "+ name + "\nTotal Score: " + score + " out of 12 ";
         return summaryScore;
     }
 
