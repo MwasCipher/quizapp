@@ -336,6 +336,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         String summaryScore = createTestSummary(name, score);
 
         TextView score = (TextView) findViewById(R.id.scoreSummaryTextView);
@@ -389,6 +390,16 @@ public class MainActivity extends AppCompatActivity {
         RadioButton radioButton15 = (RadioButton) findViewById(R.id.radio_false_fork);
         radioButton15.setEnabled(false);
 
+        final Button sumarybtn = (Button) findViewById(R.id.summarize);
+        sumarybtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sumarybtn.setEnabled(false);
+
+                Toast.makeText(MainActivity.this, "Reset And ATTEMPT ALL QUESTIONS!!!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
     }
 
@@ -407,7 +418,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         TextView summaryView = (TextView) findViewById(R.id.scoreSummaryTextView);
-        summaryView.setText(" ");
+        summaryView.setText(null);
 
         EditText name = (EditText)findViewById(R.id.enterName);
         name.setText(null);
